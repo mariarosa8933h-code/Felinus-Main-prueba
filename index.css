@@ -138,20 +138,29 @@ header nav a:hover {
   display: flex;
   gap: 40px;
   justify-content: space-between;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* permite que se apliquen en mocil */
 }
 
 #Quienes-somos .vision,
 #Quienes-somos .mision,
 #Quienes-somos .valores {
   flex: 1;
-  min-width: 0;
+  min-width: 280; /* evita que se colapse en vez de cero */
   background: rgba(15, 159, 202, 0.6); /* caja semitransparente */
   padding: 20px;
   border-radius: 12px;
   color: rgb(14, 14, 14);
   text-align: center;
+  box-sizing: border-box; /* asegura que padding no rompa el ancho */
 }
+
+@media (max-width: 768px) {
+    #Quienes-somos .bloques {
+        flex-direction: column; /* apila los cuadros */
+        gap: 20px;
+    }
+}
+
 
 
 
